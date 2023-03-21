@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:CulinaryApp.Model"
+             xmlns:viewmodel="clr-namespace:CulinaryApp.ViewModel"
+             x:DataType="viewmodel:UserRecipesViewModel"
+             Title="Explore Recipes"
+             x:Class="CulinaryApp.ExploreRecipesPage">
+    <Grid
+        RowDefinitions="*" ColumnDefinitions="*">
+            <Label Text="Recipes List from API"
+                   FontSize="Large"
+                   HorizontalOptions="Center"
+                   VerticalOptions="Center"/>
+    </Grid>
+</ContentPage>
+

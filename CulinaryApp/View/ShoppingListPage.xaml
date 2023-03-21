@@ -1,0 +1,49 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:CulinaryApp.Model"
+             xmlns:viewmodel="clr-namespace:CulinaryApp.ViewModel"
+             x:DataType="viewmodel:ShoppingListViewModel"
+             Title="{Binding Title}"
+             x:Class="CulinaryApp.ShoppingListPage">
+
+    <Grid
+         ColumnDefinitions="*,*"
+         RowDefinitions="*,auto">
+        <ListView
+            ItemsSource="{Binding shoppingListItems}"
+            Grid.Row="0"
+            Grid.ColumnSpan="2"
+            SelectionMode="None">
+            <ListView.ItemTemplate>
+                <DataTemplate x:DataType="model:ShoppingListItem">
+                    <ViewCell>
+                        <Grid Margin="16,0,16,0"
+                              RowDefinitions="auto"
+                              ColumnDefinitions="auto,*,auto">
+                            <Label Text="{Binding Title}" VerticalOptions="Center" Grid.Column="0"/>
+                            <CheckBox IsChecked="{Binding IsChecked}" Grid.Column="2" CheckedChanged="CheckBox_CheckedChanged"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Button
+            Margin="16"
+            Grid.Row="1"
+            Grid.Column="0"
+            Text="Add"
+            Command="{Binding AddNewItemCommand}"
+            TextColor="{StaticResource Primary}"
+            BackgroundColor="{StaticResource Secondary}"/>
+        <Button
+            Margin="16"
+            Grid.Row="1"
+            Grid.Column="1"
+            Text="Remove Selected"
+            Command="{Binding RemoveSelectedItemsCommand}"
+            TextColor="Red"
+            BackgroundColor="{StaticResource Secondary}"/>
+    </Grid>
+
+</ContentPage>

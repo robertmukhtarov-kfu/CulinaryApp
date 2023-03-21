@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:model="clr-namespace:CulinaryApp.Model"
+             xmlns:viewmodel="clr-namespace:CulinaryApp.ViewModel"
+             x:DataType="viewmodel:EditUserRecipeViewModel"
+             Title="{Binding Title}"
+             x:Class="CulinaryApp.EditUserRecipePage">
+
+    <Grid Margin="16"
+
+          RowDefinitions="auto,*,auto"
+          ColumnDefinitions="*,*">
+        <Entry Grid.Row="0" Grid.ColumnSpan="2" Text="{Binding RecipeTitle, Mode=TwoWay}" Placeholder="Title" FontSize="Header"/>
+        <Editor Grid.Row="1" Grid.ColumnSpan="2" Text="{Binding RecipeInstructions, Mode=TwoWay}" Placeholder="Instructions"/>
+        <Button
+            Margin="16"
+            Grid.Row="2"
+            Grid.Column="0"
+            Text="Save"
+            Command="{Binding SaveRecipeCommand}"
+            TextColor="{StaticResource Primary}"
+            BackgroundColor="{StaticResource Secondary}"/>
+        <Button
+            Margin="16"
+            Grid.Row="2"
+            Grid.Column="1"
+            IsVisible="{Binding IsDeleteVisible}"
+            Text="Delete"
+            Command="{Binding DeleteRecipeCommand}"
+            TextColor="Red"
+            BackgroundColor="{StaticResource Secondary}"/>
+    </Grid>
+
+</ContentPage>
+

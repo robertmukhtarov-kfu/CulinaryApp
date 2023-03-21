@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CulinaryApp.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CulinaryApp"
+    Shell.FlyoutBehavior="Disabled">
+
+    <TabBar>
+       <Tab Title="My Recipes"
+            Icon="book.png"
+            >
+           <ShellContent ContentTemplate="{DataTemplate local:UserRecipesPage}" />
+       </Tab>
+        <Tab Title="Explore Recipes"
+            Icon="explore.png"
+            >
+           <ShellContent ContentTemplate="{DataTemplate local:ExploreRecipesPage}" />
+       </Tab>
+        <Tab Title="Shopping List"
+             Icon="listbul.png"
+            >
+            <ShellContent ContentTemplate="{DataTemplate local:ShoppingListPage}" />
+        </Tab>
+    </TabBar>
+
+</Shell>
+

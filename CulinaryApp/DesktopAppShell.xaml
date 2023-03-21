@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="CulinaryApp.DesktopAppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:CulinaryApp"
+    Shell.FlyoutBehavior="Locked"
+    Shell.FlyoutItemIsVisible="False"
+    Shell.FlyoutWidth="200"
+    Shell.FlyoutBackdrop="Black">
+
+
+    <FlyoutItem Title="  My Recipes">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:UserRecipesPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem Title="  Explore Recipes">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:ExploreRecipesPage}" />
+        </Tab>
+    </FlyoutItem>
+    <FlyoutItem
+        Title="  Shopping List">
+        <Tab>
+            <ShellContent ContentTemplate="{DataTemplate local:ShoppingListPage}" />
+        </Tab>
+    </FlyoutItem>
+</Shell>
+
